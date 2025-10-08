@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Edit Bookmark{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-lg border-0 rounded-4 p-4">
+        <div class="text-center mb-4">
+          <h2 class="fw-bold text-warning">Add New Bookmark</h2>
+          <p class="text-muted small">Save and organize your favorite links easily</p>
+        </div>
+
+        <form method="post">
+          {% csrf_token %}
+
+          <!-- Title -->
+          <div class="mb-3">
+            <label for="title" class="form-label fw-semibold">Enter Title</label>
+            <input 
+              type="text" 
+              name="title" 
+              id="title" 
+              class="form-control rounded-3" 
+              placeholder="e.g. Movies" 
+              required
+              value={{bookmark.title}}
+            >
+          </div>
+
+          <!-- Link -->
+          <div class="mb-3">
+            <label for="link" class="form-label fw-semibold">Enter Link</label>
+            <input 
+              type="url" 
+              name="link" 
+              id="link" 
+              class="form-control rounded-3" 
+              placeholder="e.g. https://google.com" 
+              required
+              value={{bookmark.link}}
+            >
+          </div>
+
+          <!-- Category -->
+          <div class="mb-3">
+            <label for="category" class="form-label fw-semibold">Choose Category</label>
+            <select 
+              name="category" 
+              id="category" 
+              class="form-select rounded-3"
+            >
+<option value="General" {% if bookmark.category == "General" %}selected{% endif %}>General</option>
+<option value="Educational" {% if bookmark.category == "Educational" %}selected{% endif %}>Educational</option>
+<option value="Entertainment" {% if bookmark.category == "Entertainment" %}selected{% endif %}>Entertainment</option>
+<option value="Work" {% if bookmark.category == "Work" %}selected{% endif %}>Work</option>
+<option value="News" {% if bookmark.category == "News" %}selected{% endif %}>News & Articles</option>
+<option value="Shopping" {% if bookmark.category == "Shopping" %}selected{% endif %}>Shopping</option>
+<option value="Tech" {% if bookmark.category == "Tech" %}selected{% endif %}>Technology</option>
+<option value="Travel" {% if bookmark.category == "Travel" %}selected{% endif %}>Travel</option>
+<option value="Finance" {% if bookmark.category == "Finance" %}selected{% endif %}>Finance</option>
+<option value="Health" {% if bookmark.category == "Health" %}selected{% endif %}>Health & Fitness</option>
+<option value="Portfolio" {% if bookmark.category == "Portfolio" %}selected{% endif %}>Portfolio & Projects</option>
+<option value="Recipes" {% if bookmark.category == "Recipes" %}selected{% endif %}>Food & Recipes</option>
+<option value="Social" {% if bookmark.category == "Social" %}selected{% endif %}>Social Media</option>
+<option value="Inspiration" {% if bookmark.category == "Inspiration" %}selected{% endif %}>Inspiration</option>
+
+            </select>
+          </div>
+
+          <!-- Description -->
+          <div class="mb-4">
+            <label for="description" class="form-label fw-semibold">Description</label>
+            <textarea 
+              name="description" 
+              id="description" 
+              rows="4" 
+              class="form-control rounded-3" 
+              placeholder="Write a short description..."
+            ></textarea>
+          </div>
+
+          <!-- Submit button -->
+          <div class="text-center">
+            <button type="submit" class="btn btn-warning text-dark fw-semibold px-5 rounded-pill shadow-sm">
+              + Update Bookmark
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  input::placeholder, textarea::placeholder {
+    color: #adb5bd;
+    font-size: 0.95rem;
+  }
+
+  .form-control:focus, .form-select:focus {
+    border-color: #ffc107;
+    box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+  }
+
+  .card {
+    background-color: #fff;
+  }
+</style>
+{% endblock %}

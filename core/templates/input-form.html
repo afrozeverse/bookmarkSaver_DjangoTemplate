@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Add Bookmark{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-lg border-0 rounded-4 p-4">
+        <div class="text-center mb-4">
+          <h2 class="fw-bold text-warning">Add New Bookmark</h2>
+          <p class="text-muted small">Save and organize your favorite links easily</p>
+        </div>
+
+        <form method="post">
+          {% csrf_token %}
+
+          <!-- Title -->
+          <div class="mb-3">
+            <label for="title" class="form-label fw-semibold">Enter Title</label>
+            <input 
+              type="text" 
+              name="title" 
+              id="title" 
+              class="form-control rounded-3" 
+              placeholder="e.g. Movies" 
+              required
+            >
+          </div>
+
+          <!-- Link -->
+          <div class="mb-3">
+            <label for="link" class="form-label fw-semibold">Enter Link</label>
+            <input 
+              type="url" 
+              name="link" 
+              id="link" 
+              class="form-control rounded-3" 
+              placeholder="e.g. https://google.com" 
+              required
+            >
+          </div>
+
+          <!-- Category -->
+          <div class="mb-3">
+            <label for="category" class="form-label fw-semibold">Choose Category</label>
+            <select 
+              name="category" 
+              id="category" 
+              class="form-select rounded-3"
+            >
+              <option value="General">General</option>
+              <option value="Educational">Educational</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Work">Work</option>
+              <option value="News">News & Articles</option>
+              <option value="Shopping">Shopping</option>
+              <option value="Tech">Technology</option>
+              <option value="Travel">Travel</option>
+              <option value="Finance">Finance</option>
+              <option value="Health">Health & Fitness</option>
+              <option value="Portfolio">Portfolio & Projects</option>
+              <option value="Recipes">Food & Recipes</option>
+              <option value="Social">Social Media</option>
+              <option value="Inspiration">Inspiration</option>
+            </select>
+          </div>
+
+          <!-- Description -->
+          <div class="mb-4">
+            <label for="description" class="form-label fw-semibold">Description</label>
+            <textarea 
+              name="description" 
+              id="description" 
+              rows="4" 
+              class="form-control rounded-3" 
+              placeholder="Write a short description..."
+            ></textarea>
+          </div>
+
+          <!-- Submit button -->
+          <div class="text-center">
+            <button type="submit" class="btn btn-warning text-dark fw-semibold px-5 rounded-pill shadow-sm">
+              + Add Bookmark
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  input::placeholder, textarea::placeholder {
+    color: #adb5bd;
+    font-size: 0.95rem;
+  }
+
+  .form-control:focus, .form-select:focus {
+    border-color: #ffc107;
+    box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+  }
+
+  .card {
+    background-color: #fff;
+  }
+</style>
+{% endblock %}

@@ -52,9 +52,9 @@ Run server
 python manage.py runserver
 ## 🌐 Live Demo
 Deployed on Render:
-https://bookmarksaver-djangotemplate.onrender.com
+https://bookmarksaver-djangotemplate.onrender.com/
 
-🧑‍💻 Usage
+## 🧑‍💻 Usage
 Register or login as a user
 
 Add bookmark details
@@ -63,9 +63,9 @@ View bookmarks on dashboard
 
 Admin users can manage data via /admin
 
-🔐 Admin Access
+## 🔐 Admin Access
 To access the admin panel:
-
+https://bookmarksaver-djangotemplate.onrender.com/admin/
 
 
 /admin
@@ -74,7 +74,7 @@ Create a superuser:
 
 
 python manage.py createsuperuser
-📁 Project Structure (Simplified)
+## 📁 Project Structure (Simplified)
 arduino
 
 bookmarkSaver/

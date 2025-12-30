@@ -1,7 +1,7 @@
-# Bookmark Saver
+# FavLink
 
 ## 📌 Project Overview
-Bookmark Saver is a Django-based web application that allows users to save, manage, and organize their bookmarks efficiently using a clean web interface.  
+FavLink is a Django-based web application that allows users to save, manage, and organize their bookmarks efficiently using a clean web interface.  
 
 This project was built as part of a hackathon submission.
 

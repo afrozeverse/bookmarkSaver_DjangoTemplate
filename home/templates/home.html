@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="container py-5">
+  <div class="row align-items-center text-center text-md-start">
+    <div class="col-md-6">
+      <h1 class="display-4 fw-bold text-warning">
+        Save, Categorize, and Access Your Favorite Links Easily
+      </h1>
+      <p class="lead text-secondary mt-3">
+        Organize your bookmarks and tutorials in one place. Never lose track of important links again!
+      </p>
+      <a href="{% url "bookmarksList" %}" class="btn btn-warning btn-lg mt-3">Get Started</a>
+    </div>
+    <div class="col-md-6 mt-4 mt-md-0">
+      <!-- Example image or illustration -->
+      <img src="{% static 'home/homepageBanner.svg' %}" alt="Bookmarks" class="img-fluid">
+    </div>
+  </div>
+</div>
+
+
+<!-- Features Section -->
+<div class="container py-5">
+  <div class="row text-center">
+    <div class="col-md-4 mb-4">
+      <div class="card border-0 shadow h-100">
+        <div class="card-body">
+          <h5 class="card-title fw-bold text-warning">Secure Login</h5>
+          <p class="card-text">Your bookmarks are private. Only you can access them after signing in.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card border-0 shadow h-100">
+        <div class="card-body">
+          <h5 class="card-title fw-bold text-warning">Organize by Category</h5>
+          <p class="card-text">Easily categorize your links for faster access and better organization.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4 ">
+      <div class="card  border-0 shadow h-100">
+        <div class="card-body">
+          <h5 class="card-title fw-bold text-warning">Access Anywhere</h5>
+          <p class="card-text">View and manage your bookmarks on any device — desktop or mobile.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
